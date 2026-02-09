@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorpresa</title>
+
+<style>
+body{
+  margin:0;
+  background:#111;
+  color:white;
+  font-family:Arial, sans-serif;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.pantalla{display:none;}
+.activa{display:block;}
+
+.boton{
+  margin-top:20px;
+  padding:10px 20px;
+  border:none;
+  border-radius:15px;
+  background:#ff5f7e;
+  color:white;
+  font-size:16px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- MÚSICA -->
+<audio id="musica" loop>
+  <source src="mi_gata.mp3" type="audio/mpeg">
+</audio>
+
+<!-- PANTALLA 1 -->
+<div id="p1" class="pantalla activa">
+  <div style="font-size:90px;" onclick="ir1()">🧸</div>
+  <p>Tócame</p>
+</div>
+
+<!-- PANTALLA 2 -->
+<div id="p2" class="pantalla">
+  <p>
+    hola peruana vas a ser mi sujeto
+    de prueba quiero ver si funciona
+    acabo de hacer esto equisde<br>
+    
+  </p>
+  <button class="boton" onclick="ir2()">Continuar</button>
+</div>
+
+<!-- PANTALLA 3 -->
+<div id="p3" class="pantalla">
+  <div style="font-size:90px;" onclick="ir3()">🐱</div>
+  <p>Presióname ctmr</p>
+</div>
+
+<!-- PANTALLA 4 -->
+<div id="p4" class="pantalla">
+  <div style="background:white;color:black;padding:20px;border-radius:10px;">
+    <h3>pollito con papas</h3></h3>
+    <p>se supone que aqui va un texto,
+    acompañado de musica pero nose si funciona</p>
+  </div>
+  <div style="font-size:50px;margin-top:20px;">🧸</div>
+</div>
+
+<script>
+function ir1(){
+  document.getElementById("p1").style.display="none";
+  document.getElementById("p2").style.display="block";
+  document.getElementById("musica").play().catch(()=>{});
+}
+
+function ir2(){
+  document.getElementById("p2").style.display="none";
+  document.getElementById("p3").style.display="block";
+}
+
+function ir3(){
+  document.getElementById("p3").style.display="none";
+  document.getElementById("p4").style.display="block";
+}
+</script>
+
+</body>
+</html>
